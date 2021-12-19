@@ -30,17 +30,6 @@ export class SetupServer extends Server {
     this.addControllers([usersController, postsController]);
   }
 
-  // private async docsSetup(): Promise<void> {
-  //   this.app.use('/docs', swaggerUI.serve, swaggerUI.setup(apiSchema));
-  //   this.app.use(
-  //     OpenApiValidator.middleware({
-  //       apiSpec: apiSchema as OpenAPIV3.Document,
-  //       validateRequests: true,
-  //       validateResponses: true,
-  //     }),
-  //   );
-  // }
-
   public getApp(): Application {
     return this.app;
   }
