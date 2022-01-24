@@ -46,11 +46,7 @@ class PostsController {
     const { content, id } = req.body;
     const { id: userId } = req.decoded;
 
-    console.log('id:: ' + id);
-
     const post = await this.postService.findOne(id);
-
-    console.log(post);
 
     if (!post) {
       return res.status(404).json({ message: 'Post not exists' });
@@ -72,7 +68,7 @@ class PostsController {
     const { id: userId } = req.decoded;
 
     const post = await this.postService.findOne(id);
-    console.log(id);
+
     if (!post) {
       return res.status(404).json({ message: 'Post not exists' });
     }
